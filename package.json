@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-api",
+  "version": "0.0.0",
+  "description": "NodeApi",
+  "main": "server.js",
+  "author": {
+    "name": "abbadessas"
+  },
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "koa-static-2": "^3.0.0"
+  },
+  "devDependencies": {}
+}
