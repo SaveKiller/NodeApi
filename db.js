@@ -9,7 +9,6 @@ exports.addPerson = (body) =>
     personToAdd.id = uuid();
     personToAdd.added = Date.now();
     var persons = db.get('persons');
-    persons.push({aa:1,bb:2}).write();
     persons.push(personToAdd).write();
     return {result: "added : "+JSON.stringify(personToAdd)};
 }
