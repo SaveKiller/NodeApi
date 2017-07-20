@@ -1,3 +1,5 @@
+var db = require('./db.js');
+
 var exports = module.exports = {};
 
 exports.home = () => async (ctx, next) =>
@@ -8,11 +10,19 @@ exports.home = () => async (ctx, next) =>
     await next();
 }
 
-exports.ciao = () => async (ctx, next) =>
+exports.error = () => async (ctx, next) =>
 {
     var a = 100/tre;
     ctx.body = `Hello Koa CIAO middleware: ${ctx.path}`;
     
+    await next();
+    //throw Error("Unauthorized Test ciaociao");
+}
+
+
+exports.addPerson = () => async (ctx, next) =>
+{
+    ctx.data = db.addPerson(ctx.request.body);
     await next();
     //throw Error("Unauthorized Test ciaociao");
 }

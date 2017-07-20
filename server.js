@@ -21,7 +21,8 @@ var approutes = require('./routes.js');
 // routes
 // ==========================================================
 router.get('/', approutes.home());
-router.get('/ciao', approutes.ciao());
+router.get('/error', approutes.error());
+router.post('/add',approutes.addPerson());
 // ==========================================================
 
 

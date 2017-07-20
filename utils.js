@@ -12,7 +12,7 @@ exports.logger = () => async (ctx, next) =>
     var url = ctx.originalUrl;
     var mess = ctx.response.message;
     var path = ctx.path;
-    var len = ctx.body.length;
+    var len = ctx.body ? ctx.body.length : 0;
 
     console.log(`>> ${method} ${url} ${status} ${ms}ms ${len}b => ${mess}`);
     if (ctx.err) console.log(`ERROR >> ${ctx.err.stack}`);
