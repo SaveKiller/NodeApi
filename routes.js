@@ -12,9 +12,9 @@ exports.home = () => async (ctx, next) =>
 
 exports.error = () => async (ctx, next) =>
 {
+    // error undefined 'tre'
     var a = 100/tre;
     ctx.body = `Hello Koa CIAO middleware: ${ctx.path}`;
-    
     await next();
     //throw Error("Unauthorized Test ciaociao");
 }
@@ -24,5 +24,10 @@ exports.addPerson = () => async (ctx, next) =>
 {
     ctx.data = db.addPerson(ctx.request.body);
     await next();
-    //throw Error("Unauthorized Test ciaociao");
+}
+
+exports.allPersons = () => async (ctx, next) =>
+{
+    ctx.data = db.allPersons();
+    await next();
 }

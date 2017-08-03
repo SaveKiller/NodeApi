@@ -2,8 +2,7 @@
 
 var koa = new (require('koa'))();
 //var serve = require('koa-static-2');
-var bodyParser = require('koa-bodyparser');
-koa.use(bodyParser());
+koa.use(require('koa-bodyparser')());
 
 
 // utilities: logger, data, error catcher
@@ -23,6 +22,8 @@ var approutes = require('./routes.js');
 router.get('/', approutes.home());
 router.get('/error', approutes.error());
 router.post('/add',approutes.addPerson());
+router.post('/all',approutes.allPersons());
+router.get('/all',approutes.allPersons());
 // ==========================================================
 
 

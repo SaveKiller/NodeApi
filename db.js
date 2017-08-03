@@ -10,5 +10,11 @@ exports.addPerson = (body) =>
     personToAdd.added = Date.now();
     var persons = db.get('persons');
     persons.push(personToAdd).write();
-    return {result: "added : "+JSON.stringify(personToAdd)};
+    return personToAdd;
+}
+
+exports.allPersons = () =>
+{
+    var arr = db.get('persons').value();
+    return { count : arr.length, items : arr}
 }
