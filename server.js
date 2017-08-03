@@ -22,7 +22,6 @@ var approutes = require('./routes.js');
 router.get('/', approutes.home());
 router.get('/error', approutes.error());
 router.post('/add',approutes.addPerson());
-router.post('/all',approutes.allPersons());
 router.get('/all',approutes.allPersons());
 // ==========================================================
 

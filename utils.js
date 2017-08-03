@@ -14,7 +14,7 @@ exports.logger = () => async (ctx, next) =>
     var path = ctx.path;
     var len = ctx.body ? ctx.body.length : 0;
 
-    console.log(`>> ${method} ${url} ${status} ${ms}ms ${len}b => ${mess}`);
+    console.log(`>> ${method} ${url} ${ms}ms ${len}b => ${status} ${mess}`);
     if (ctx.err) console.log(`ERROR >> ${ctx.err.stack}`);
 };
 
@@ -30,7 +30,7 @@ exports.datacatcher = () => async (ctx, next) =>
         ctx.err = err; 
         ctx.data = { Error : err.message }; 
     }
-    
+
     ctx.set('Content-Type', 'application/json');
     ctx.body = JSON.stringify(ctx.data);       
 };

@@ -8,8 +8,7 @@ exports.addPerson = (body) =>
     var personToAdd = body;
     personToAdd.id = uuid();
     personToAdd.added = Date.now();
-    var persons = db.get('persons');
-    persons.push(personToAdd).write();
+    db.get('persons').push(personToAdd).write();
     return personToAdd;
 }
 
